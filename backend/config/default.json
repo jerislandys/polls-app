@@ -1,0 +1,4 @@
+{
+  "mongoURI": "url_db_mongo:27017",
+  "jwtSecret": "sl_myJwtSecret"
+}
