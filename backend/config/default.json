@@ -1,4 +1,4 @@
 {
-  "mongoURI": "url_db_mongo:27017",
+  "mongoURI": "mongodb://localhost:27017/polls-app",
   "jwtSecret": "sl_myJwtSecret"
 }

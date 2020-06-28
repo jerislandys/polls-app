@@ -7,9 +7,9 @@ import morgan from 'morgan';
 import config from './config';
 
 // routes
-// import authRoutes from './routes/api/auth';
-// import itemRoutes from './routes/api/items';
-// import userRoutes from './routes/api/users';
+import authRoutes from './routes/api/auth';
+import pollRoutes from './routes/api/polls';
+import userRoutes from './routes/api/users';
 
 const { MONGO_URI, MONGO_DB_NAME } = config;
 
@@ -24,6 +24,7 @@ app.use(bodyParser.json());
 
 // DB Config
 const db = `${MONGO_URI}/${MONGO_DB_NAME}`;
+console.log(db);
 
 // Connect to Mongo
 mongoose
@@ -36,9 +37,9 @@ mongoose
   .catch(err => console.log(err));
 
 // Use Routes
-// app.use('/api/items', itemRoutes);
-// app.use('/api/users', userRoutes);
-// app.use('/api/auth', authRoutes);
+app.use('/api/polls', pollRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/auth', authRoutes);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
